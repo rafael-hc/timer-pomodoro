@@ -43,6 +43,10 @@ export function CyclesContextProvider({
     setAmountSecondsPassed(seconds)
   }
 
+  function resetTitle() {
+    document.title = 'ignite Timer'
+  }
+
   function markCurrentCycleAsFinished() {
     setCycles((state) =>
       state.map((cycle) => {
@@ -54,6 +58,7 @@ export function CyclesContextProvider({
       }),
     )
     setActiveCycleId(null)
+    resetTitle()
   }
 
   function createNewCycle(data: CreateCycleData) {
@@ -80,6 +85,7 @@ export function CyclesContextProvider({
       }),
     )
     setActiveCycleId(null)
+    resetTitle()
   }
 
   return (
