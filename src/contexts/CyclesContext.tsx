@@ -12,6 +12,7 @@ import {
   markCurrentCycleAsFinishedAction,
 } from '../Reducers/cycles/actions'
 import { Cycle, cyclesReducer } from '../Reducers/cycles/reducer'
+import ding from '../assets/a.mp3'
 
 interface CreateCycleData {
   task: string
@@ -84,6 +85,9 @@ export function CyclesContextProvider({
   function markCurrentCycleAsFinished() {
     dispatch(markCurrentCycleAsFinishedAction())
     resetTitle()
+
+    const song = new Audio(ding)
+    song.play()
   }
 
   function createNewCycle(data: CreateCycleData) {
